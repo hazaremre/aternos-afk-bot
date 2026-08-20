@@ -18,7 +18,6 @@ const BOT_CONFIG = {
   host: 'mudminnow.aternos.host', // Aternos IP'ni yaz
   port: 50920,                           // Aternos Portunu yaz (Varsayılan: 25565)
   username: 'AFK_Bot_724',              // Botun oyundaki adı
-  version: '1.21.',                        // Otomatik sürüm tespiti
 };
 
 function createBot() {
