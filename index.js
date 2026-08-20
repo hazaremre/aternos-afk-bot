@@ -17,7 +17,8 @@ const BOT_CONFIG = {
   host: 'lobster.aternos.host',
   port: 50920,
   username: 'AFK_Bot_724',
-  version: '1.21.1' // Otomatik sürüm algılamayı zorla
+  version: '1.21.1',
+  auth: 'offline'
 };
 
 function createBot() {
@@ -29,7 +30,7 @@ function createBot() {
   });
 
   bot.on('error', (err) => {
-    console.log('HATA OLUŞTU:', err);
+    console.log('HATA OLUŞTU:', err.message);
   });
 
   bot.on('end', (reason) => {
