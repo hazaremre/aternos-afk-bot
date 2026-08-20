@@ -15,8 +15,8 @@ app.listen(PORT, () => {
 
 // SUNUCU BİLGİLERİ (Aternos IP ve Port)
 const BOT_CONFIG = {
-  host: 'SUNUCU_IP_ADRESIN.aternos.me', // Aternos IP'ni yaz
-  port: 25565,                           // Aternos Portunu yaz (Varsayılan: 25565)
+  host: 'hpak06.aternos.me', // Aternos IP'ni yaz
+  port: 50920,                           // Aternos Portunu yaz (Varsayılan: 25565)
   username: 'AFK_Bot_724',              // Botun oyundaki adı
   version: false                         // Otomatik sürüm tespiti
 };
