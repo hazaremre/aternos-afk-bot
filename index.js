@@ -20,10 +20,10 @@ function createBot() {
   console.log('Sunucuya bağlanmayı deniyor...');
 
   const bot = mineflayer.createBot({
-    host: ATERNOS_DOMAIN,
-    port: ATERNOS_PORT,
+    host: 'hpak06.aternos.me',
+    port: 50920,
     username: 'AFK_Bot_724',
-    version: false, // Sunucu sürümünü otomatik algılar
+    version: '1.21.1', // Sunucu sürümünü otomatik algılar
     auth: 'offline',
     checkTimeoutInterval: 60000,
     keepAlive: true
