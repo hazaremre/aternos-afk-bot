@@ -18,7 +18,7 @@ const BOT_CONFIG = {
   host: 'hpak06.aternos.me', // Aternos IP'ni yaz
   port: 50920,                           // Aternos Portunu yaz (Varsayılan: 25565)
   username: 'AFK_Bot_724',              // Botun oyundaki adı
-  version: false                         // Otomatik sürüm tespiti
+  version: 1.21.10                         // Otomatik sürüm tespiti
 };
 
 function createBot() {
