@@ -14,10 +14,10 @@ app.listen(PORT, () => {
 
 // SUNUCU BİLGİLERİ
 const BOT_CONFIG = {
-  host: 'hpak06.aternos.me',
+  host: 'lobster.aternos.host',
   port: 50920,
   username: 'AFK_Bot_724',
-  version: false // Otomatik sürüm algılamayı zorla
+  version: '1.21.1' // Otomatik sürüm algılamayı zorla
 };
 
 function createBot() {
