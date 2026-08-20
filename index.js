@@ -1,61 +1,41 @@
-const mineflayer = require('mineflayer');
 const express = require('express');
+const mineflayer = require('mineflayer');
 
-// HuggingFace'in kapanmaması için basit web sunucusu
 const app = express();
-const PORT = process.env.PORT || 7860;
+const PORT = process.env.PORT || 10000;
 
 app.get('/', (req, res) => {
-  res.send('Aternos Bot Aktif!');
+  res.send('AFK Bot Aktif!');
 });
 
 app.listen(PORT, () => {
   console.log(`Web sunucusu ${PORT} portunda çalışıyor.`);
 });
 
-// SUNUCU BİLGİLERİ (Aternos IP ve Port)
+// SUNUCU BİLGİLERİ
 const BOT_CONFIG = {
-  host: 'hpak06.aternos.me', // Aternos IP'ni yaz
-  port: 50920,                           // Aternos Portunu yaz (Varsayılan: 25565)
-  username: 'AFK_Bot_724',              // Botun oyundaki adı
-  version: '1.21.1' ,
+  host: 'hpak06.aternos.me',
+  port: 50920,
+  username: 'AFK_Bot_724',
+  version: false // Otomatik sürüm algılamayı zorla
 };
 
 function createBot() {
+  console.log('Bota bağlanma komutu verildi...');
   const bot = mineflayer.createBot(BOT_CONFIG);
 
   bot.on('spawn', () => {
-    console.log('Bot sunucuya başarıyla katıldı!');
-    
-    // Aternos AFK tespitini yakalanmamak için Smart Anti-AFK
-    setInterval(() => {
-      // 1. Rastgele Bakış Yönü Değiştirme
-      const yaw = Math.random() * Math.PI * 2;
-      const pitch = (Math.random() - 0.5) * Math.PI;
-      bot.look(yaw, pitch, true);
-
-      // 2. Rastgele Zıplama
-      if (Math.random() > 0.5) {
-        bot.setControlState('jump', true);
-        setTimeout(() => bot.setControlState('jump', false), 500);
-      }
-
-      // 3. Eğilip Kalkma
-      if (Math.random() > 0.7) {
-        bot.setControlState('sneak', true);
-        setTimeout(() => bot.setControlState('sneak', false), 1000);
-      }
-    }, 4000); // Her 4 saniyede bir rastgele hareket
-  });
-
-  // Sunucudan düşerse veya Aternos yeniden başlarsa otomatik tekrar bağlan
-  bot.on('end', () => {
-    console.log('Bağlantı kesildi, 30 saniye sonra tekrar deneniyor...');
-    setTimeout(createBot, 30000);
+    console.log('>>> Bot sunucuya başarıyla katıldı! <<<');
   });
 
   bot.on('error', (err) => {
-    console.log('Hata oluştu:', err);
+    console.log('HATA OLUŞTU:', err);
+  });
+
+  bot.on('end', (reason) => {
+    console.log('Bot sunucudan ayrıldı. Nedeni:', reason);
+    console.log('5 saniye sonra tekrar deneniyor...');
+    setTimeout(createBot, 5000);
   });
 }
 
