@@ -11,10 +11,9 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Web sunucusu ${PORT} portunda çalışıyor.`);
 });
-
 // SUNUCU BİLGİLERİ
 const BOT_CONFIG = {
-  host: 'lobster.aternos.host',
+  host: '185.107.193.108',
   port: 50920,
   username: 'AFK_Bot_724',
   version: '1.21.1',
